@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Cell = {
   color: string;
   active: boolean;
 };
 
-const RainfallGrid: React.FC<{ rows: number; cols: number }> = ({
-  rows,
-  cols,
-}) => {
+const RainGrid = ({ rows, cols }: { rows: number; cols: number }) => {
   const [grid, setGrid] = useState<Cell[][]>(
     Array.from({ length: rows }, () =>
       Array.from({ length: cols }, () => ({ color: "black", active: false }))
@@ -74,4 +71,4 @@ const RainfallGrid: React.FC<{ rows: number; cols: number }> = ({
   );
 };
 
-export default RainfallGrid;
+export default RainGrid;
